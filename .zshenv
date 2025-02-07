@@ -1,33 +1,29 @@
-# XDG Variables
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$XDG_CONFIG_HOME/local/share"
 export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
 
-# zsh
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-export HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
-export HISTSIZE=10000                   # Maximum events for internal history
-export SAVEHIST=10000                   # Maximum events in history file
 
-# Editor
 export EDITOR="nvim"
 export VISUAL="nvim"
-# Terminal
+
 export TERMINAL=alacritty
 
-# Homebrew
-export PATH="$PATH:/opt/homebrew/bin"
+# Make path entries unique (https://unix.stackexchange.com/a/62599)
+typeset -U path PATH
 
-# Bat
-export BAT_THEME="Catppuccin-mocha"
+path+=("/opt/homebrew/bin")
 
-# FZF Options
-export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+export GOPATH="$HOME/go"
+path+=("$GOPATH/bin")
+
+path+=("/opt/homebrew/opt/rustup/bin")
+path+=("$HOME/.cargo/bin/")
+
+path+=("/usr/local/bin/")
+
+path+=("$HOME/.dotfiles/scripts")
+
 
 export PERSONAL_WORKSPACE="$HOME/personal"
 export WORK_WORKSPACE="$HOME/work"
-export WORKSPACE="$PERSONAL_WORKSPACE"
-export PATH="$PATH:$HOME/.dotfiles/bin"
