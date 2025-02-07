@@ -30,3 +30,4 @@ export FZF_DEFAULT_OPTS=" \
 export PERSONAL_WORKSPACE="$HOME/personal"
 export WORK_WORKSPACE="$HOME/work"
 export WORKSPACE="$PERSONAL_WORKSPACE"
+export PATH="$PATH:$HOME/.dotfiles/bin"
