@@ -7,9 +7,9 @@ function source_or_install_zap {
 }
 
 function source_if_exists {
-    local path="$1"
-    if [ -f "$path" ]; then
-        source "$path"
+    local file_path="$1"
+    if [ -f "$file_path" ]; then
+        source "$file_path"
     fi
 }
 
